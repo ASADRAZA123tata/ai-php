@@ -1,0 +1,12 @@
+if($_SERVER['REQUEST_METHOD']=='POST')
+{
+  if(isset($_POST['done']))
+  {
+
+  $name =$_POST["username"]; //same hona chaiyey jo form mai deya hai name tag mai
+  $password=$_POST["password"];
+  $q = "INSERT INTO `forms`(`name`, `password`) VALUES ('$name','$password')";
+  $res = mysqli_query($con,$q);
+ //header or exit ka kaam hai duplicate data ki insertion ko rukna reload krte waqt
+  header("Location:index.php");
+  exit;

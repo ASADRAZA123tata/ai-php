@@ -1,0 +1,10 @@
+ $id = $_GET['id'];
+    $h ="SELECT * FROM `forms` WHERE id=$id";
+    $query = mysqli_query($con,$h);
+    
+  $name =$_POST["username"];
+  $password=$_POST["password"];
+  $q = "UPDATE `forms` SET `name`='$name',`password`='$password' WHERE id=$id";
+  $res = mysqli_query($con,$q);
+  header("Location:display.php");
+  exit;

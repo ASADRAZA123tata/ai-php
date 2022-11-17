@@ -1,0 +1,16 @@
+                $h ="SELECT * FROM `forms`";
+                $query = mysqli_query($con,$h);
+                while($res =mysqli_fetch_assoc($query))
+                {
+                 ?>
+                 <tbody>
+                  <tr class="text-center">
+                   <td><?php echo $res['id'];?></td>
+                    <td><?php echo $res['name'];?></td>
+                    <td><?php echo $res['password'];?></td>
+                    <td><?php echo $res['date'];?></td>
+                    <td> <button type="button" class="btn btn-primary btn-md"><a href="edit.php?id=<?php echo $res['id'];?>">Update</a></button> 
+                <button type="button" class="btn btn-success btn-md"><a href="delete.php?id=<?php echo $res['id'];?>">Delete</a></button></td>
+                
+
+                  </tr>
