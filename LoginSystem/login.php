@@ -43,7 +43,7 @@ if(empty($err))
                     {
                         if(password_verify($password, $hashed_password))
                         {
-                            // this means the password is corrct. Allow user to login
+                          
                             session_start();
                             $_SESSION["username_lg"] = $username;
                             $_SESSION["id"] = $id;
@@ -52,8 +52,6 @@ if(empty($err))
                             $bab= $_FILES["image_src"];
                             $_SESSION[$bab]=$ab;
                             $_SESSION["loggedin"] = true;
-
-                            //Redirect user to welcome page
                             header("location: welcome.php");
                             
                         }
